@@ -1,5 +1,15 @@
-.container {
-  text-align: center;
+.App {
   max-width: 600px;
-  border: 1px solid #ced4da;
+  margin: 20px auto;
+}
+.App footer {
+  color: #2167af;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 7px;
+}
+
+.App footer a {
+  text-decoration: none;
 }

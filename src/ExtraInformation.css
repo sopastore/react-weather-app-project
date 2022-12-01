@@ -1,0 +1,18 @@
+.ExtraInformation .card {
+  padding: 7px 0px;
+  font-family: "Akshar", sans-serif;
+}
+
+.ExtraInformation .card-body {
+  border: transparent;
+  background-color: transparent;
+  text-align: center;
+}
+
+.ExtraInformation .card-title {
+  color: #ffffff;
+}
+
+.ExtraInformation .card-text {
+  color: #ffffff;
+}

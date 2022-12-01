@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather />
-        <p>
+        <footer>
           This proyect was coded by{" "}
           <a
             href="https://phenomenal-alpaca-b8ef22.netlify.app/"
@@ -21,7 +21,7 @@ export default function App() {
           >
             open-source
           </a>
-        </p>
+        </footer>
       </div>
     </div>
   );
