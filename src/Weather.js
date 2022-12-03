@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 import Search from "./Search";
 import ExtraInformation from "./ExtraInformation";
 import axios from "axios";
@@ -11,7 +12,7 @@ export default function Weather(props) {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      date: "Friday 14:30",
+      date: new Date(response.data.time * 1000),
       city: response.data.city,
       description: response.data.condition.description,
       temperature: response.data.temperature.current,
@@ -24,7 +25,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <div className="header">Last updated Tuesday 16:56</div>
+        <FormattedDate date={weatherData.date} />
         <Search />
         <div className="row my-3">
           <div className="col-8">
