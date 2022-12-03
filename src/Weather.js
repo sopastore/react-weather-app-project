@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
+import WeatherInfo from "./WeatherInfo";
 import FormattedDate from "./FormattedDate";
-import Search from "./Search";
-import ExtraInformation from "./ExtraInformation";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -26,32 +25,25 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <FormattedDate date={weatherData.date} />
-        <Search />
-        <div className="row my-3">
-          <div className="col-8">
-            <h1>{weatherData.city}</h1>
-            <ExtraInformation
-              feelslike={weatherData.feelsLike}
-              humidity={weatherData.humidity}
-              wind={weatherData.wind}
+        <form className="mb-4">
+          <div className="d-flex flex-row">
+            <input type="submit" className="btn" id="search-icon" value="🔍" />
+            <input
+              type="text"
+              placeholder="Search for a city..."
+              autoComplete="off"
+              autoFocus="on"
+              class="form-control"
+              id="city-input"
+            />
+            <input
+              type="submit"
+              id="current-location"
+              value="Current location"
             />
           </div>
-          <div className="col-4">
-            <div className="d-flex">
-              <div className="temp-with-units">
-                <span className="temperature">
-                  {Math.round(weatherData.temperature)}
-                </span>{" "}
-                <span className="units">°C | °F</span>
-              </div>
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="Partly Cloudy"
-              />
-              <h3 className="text-capitalize">{weatherData.description}</h3>
-            </div>
-          </div>
-        </div>
+        </form>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
