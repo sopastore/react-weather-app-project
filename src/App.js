@@ -12,6 +12,7 @@ export default function App() {
           <a
             href="https://phenomenal-alpaca-b8ef22.netlify.app/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Sofia Pastore
           </a>
@@ -19,6 +20,7 @@ export default function App() {
           <a
             href="https://github.com/sopastore/react-weather-app-project"
             target="_blank"
+            rel="noopener noreferrer"
           >
             open-source
           </a>
