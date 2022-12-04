@@ -1,5 +1,6 @@
 import React from "react";
 import "./WeatherInfo.css";
+import WeatherIcon from "./WeatherIcon";
 import ExtraInformation from "./ExtraInformation";
 
 export default function WeatherInfo(props) {
@@ -22,10 +23,7 @@ export default function WeatherInfo(props) {
               </span>{" "}
               <span className="units">°C | °F</span>
             </div>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Partly Cloudy"
-            />
+            <WeatherIcon code={props.data.icon} alt={props.data.description} />
             <h3 className="text-capitalize">{props.data.description}</h3>
           </div>
         </div>
