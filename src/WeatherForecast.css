@@ -1,0 +1,30 @@
+.WeatherForecast {
+  text-align: center;
+}
+
+.WeatherForecast-day {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.WeatherForecast-description {
+  color: #041e60;
+  font-size: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 2px;
+  position: relative;
+  top: -22px;
+}
+
+.WeatherForecast-temperature-max {
+  color: #ffffff;
+  position: relative;
+  top: -17px;
+}
+
+.WeatherForecast-temperature-min {
+  color: #041e60;
+  position: relative;
+  top: -17px;
+}
