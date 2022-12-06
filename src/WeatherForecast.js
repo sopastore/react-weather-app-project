@@ -4,23 +4,30 @@ import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
 
 export default function WeatherForecast(props) {
-  const [forecast, setForecast] = useState({ ready: false });
+  const [forecast, setForecast] = useState({ loaded: false });
 
   function handleResponse(response) {
     setForecast({
-      ready: true,
+      loaded: true,
       data: response.data.daily,
     });
   }
 
-  if (forecast.ready) {
+  if (forecast.loaded) {
     console.log(forecast.data[0]);
     return (
       <div className="WeatherForecast">
         <div className="row">
-          <div className="col">
-            <WeatherForecastDay data={forecast.data[0]} />
-          </div>
+          {forecast.data.map(function(dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            }
+          })}
+          <div className="col"></div>
         </div>
       </div>
     );
