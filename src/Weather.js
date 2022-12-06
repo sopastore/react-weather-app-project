@@ -10,7 +10,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       date: new Date(response.data.time * 1000),
@@ -51,7 +50,7 @@ export default function Weather(props) {
               placeholder="Search for a city..."
               autoComplete="off"
               autoFocus="on"
-              class="form-control"
+              className="form-control"
               id="city-input"
               onChange={handleCityChange}
             />
@@ -63,7 +62,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast city={weatherData.city} />
       </div>
     );
   } else {

@@ -1,0 +1,26 @@
+.WeatherForecastDay .WeatherForecastDay-day {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.WeatherForecastDay .WeatherForecastDay-description {
+  color: #041e60;
+  font-size: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 2px;
+  position: relative;
+  top: -22px;
+}
+
+.WeatherForecastDay .WeatherForecastDay-temperature-max {
+  color: #ffffff;
+  position: relative;
+  top: -17px;
+}
+
+.WeatherForecastDay .WeatherForecastDay-temperature-min {
+  color: #041e60;
+  position: relative;
+  top: -17px;
+}
