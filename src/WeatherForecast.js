@@ -9,7 +9,7 @@ export default function WeatherForecast(props) {
 
   useEffect(() => {
     setLoaded(false);
-  }, [props.city]);
+  }, [props.coordinates]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
@@ -17,19 +17,17 @@ export default function WeatherForecast(props) {
   }
 
   function load() {
-    console.log(props.city);
     const apiKey = "oe00260af9e2etf881406373b51f630c";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${apiKey}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${props.coordinates.latitude}&lon=${props.coordinates.longitude}&key=${apiKey}`;
 
     axios.get(apiUrl).then(handleResponse);
   }
 
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="WeatherForecast">
         <div className="row">
-          {forecast.map(function(dailyForecast, index) {
+          {forecast.map(function (dailyForecast, index) {
             if (index < 1) {
               return null;
             } else {
@@ -44,7 +42,6 @@ export default function WeatherForecast(props) {
               }
             }
           })}
-          <div className="col"></div>
         </div>
       </div>
     );

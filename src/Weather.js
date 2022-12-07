@@ -14,6 +14,7 @@ export default function Weather(props) {
       ready: true,
       date: new Date(response.data.time * 1000),
       city: response.data.city,
+      coordinates: response.data.coordinates,
       description: response.data.condition.description,
       icon: response.data.condition.icon,
       temperature: response.data.temperature.current,
@@ -38,6 +39,17 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  function searchLocation(position) {
+    let apiKey = "oe00260af9e2etf881406373b51f630c";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function getCurrentLocation(event) {
+    event.preventDefault();
+    console.log(navigator.geolocation.getCurrentPosition(searchLocation));
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -58,11 +70,12 @@ export default function Weather(props) {
               type="submit"
               id="current-location"
               value="Current location"
+              onClick={getCurrentLocation}
             />
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast city={weatherData.city} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
