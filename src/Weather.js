@@ -4,6 +4,8 @@ import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import FormattedDate from "./FormattedDate";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -66,12 +68,14 @@ export default function Weather(props) {
               id="city-input"
               onChange={handleCityChange}
             />
-            <input
+            <button
+              className="current-location-btn"
               type="submit"
               id="current-location"
-              value="Current location"
               onClick={getCurrentLocation}
-            />
+            >
+              <FontAwesomeIcon icon={solid("location-dot")} size="2x" beat />
+            </button>
           </div>
         </form>
         <WeatherInfo data={weatherData} />
