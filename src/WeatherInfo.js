@@ -2,7 +2,7 @@ import React from "react";
 import "./WeatherInfo.css";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
-import ExtraInformation from "./ExtraInformation";
+import WeatherExtraInfo from "./WeatherExtraInfo";
 
 export default function WeatherInfo(props) {
   return (
@@ -10,7 +10,7 @@ export default function WeatherInfo(props) {
       <div className="row my-3">
         <div className="col-8">
           <h1>{props.data.city}</h1>
-          <ExtraInformation
+          <WeatherExtraInfo
             feelslike={props.data.feelsLike}
             humidity={props.data.humidity}
             wind={props.data.wind}

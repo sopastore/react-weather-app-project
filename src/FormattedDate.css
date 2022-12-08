@@ -1,9 +1,9 @@
 .FormattedDate {
   color: #04287a;
   text-align: end;
-  font-family: "Poppins", sans-serif;
+  font-family: monospace;
   text-transform: uppercase;
   font-size: 10px;
-  font-weight: 550;
+  font-weight: 600;
   padding-bottom: 10px;
 }

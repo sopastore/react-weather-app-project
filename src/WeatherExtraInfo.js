@@ -1,11 +1,11 @@
 import React from "react";
-import "./ExtraInformation.css";
+import "./WeatherExtraInfo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
-export default function ExtraInformation(props) {
+export default function WeatherExtraInfo(props) {
   return (
-    <div className="ExtraInformation card-group">
+    <div className=".WeatherExtraInfo card-group">
       <div className="card card-body">
         <h5 className="card-title">Feels like</h5>
         <FontAwesomeIcon icon={solid("temperature-half")} inverse size="2x" />

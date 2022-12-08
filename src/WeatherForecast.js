@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./WeatherForecast.css";
 import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
 
@@ -25,9 +24,9 @@ export default function WeatherForecast(props) {
 
   if (loaded) {
     return (
-      <div className="WeatherForecast">
+      <div className="WeatherForecast d-flex justify-content-center">
         <div className="row">
-          {forecast.map(function (dailyForecast, index) {
+          {forecast.map(function(dailyForecast, index) {
             if (index < 1) {
               return null;
             } else {
