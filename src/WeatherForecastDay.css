@@ -1,27 +1,28 @@
-.WeatherForecastDay .WeatherForecastDay-day {
+.WeatherForecastDay #forecast-day {
   color: #ffffff;
   font-size: 15px;
   font-family: monospace;
 }
 
-.WeatherForecastDay .WeatherForecastDay-description {
+.WeatherForecastDay #forecast-description {
   color: #041e60;
   font-size: 8px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   margin-bottom: 2px;
   position: relative;
-  top: -22px;
+  top: -30px;
 }
 
-.WeatherForecastDay .WeatherForecastDay-temperature-max {
+.WeatherForecastDay-temperatures {
+  position: relative;
+  top: -28px;
+}
+
+.WeatherForecastDay #forecast-max-temperature {
   color: #ffffff;
-  position: relative;
-  top: -17px;
 }
 
-.WeatherForecastDay .WeatherForecastDay-temperature-min {
+.WeatherForecastDay #forecast-min-temperature {
   color: #041e60;
-  position: relative;
-  top: -17px;
 }
